@@ -14,10 +14,15 @@ class JugadorController extends Controller
      */
     public function index()
     {
-        $jugadores = Jugador::all();
+         $jugadores = Jugador::all();
 
         return view('jugadores')->with('jugadores', $jugadores);
-        //return response()->json(["data" => $jugadores]);
+
+    }
+
+    public function getAll(){
+        $jugadores = Jugador::all();
+        return response()->json(["data" => $jugadores]);
     }
 
     /**
@@ -38,9 +43,9 @@ class JugadorController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
-        /* Jugador::create($request->all());
-        return response()->json(["message" => "Partido Creado"]); */
+        //return $request->all();
+        Jugador::create($request->all());
+        return response()->json(["message" => "Jugador Creado"]);
     }
 
     /**
@@ -75,6 +80,9 @@ class JugadorController extends Controller
     public function update(Request $request, Jugador $jugador)
     {
         //
+        //JugadorDB::update($request, $jugador);
+        //return response()->json(["message"=> "Jugador Editado"]);
+        return response()->json($request);
     }
 
     /**

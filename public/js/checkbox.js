@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    console.log('arranca ok');
     // Activate tooltip
     $('[data-toggle="tooltip"]').tooltip();
 

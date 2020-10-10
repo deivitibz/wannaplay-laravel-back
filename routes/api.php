@@ -3,7 +3,6 @@
 use App\Http\Controllers\PartidoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,18 +18,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-//MOSTRAR TODOS LOS JUGADORES
-Route::get('/jugadores', 'JugadorController@index');
-
-// MOSTRAR JUGADOR
+// JUGADORES
+Route::get('/jugadores', 'JugadorController@getAll');
 Route::get('/jugadores/{jugador}','JugadorController@show');
-
-// AÑADIR JUGADOR
 Route::post('/jugadores','JugadorController@store');
+Route::delete('/jugadores/{id}', 'JugadorController@destroy');
+Route::put('/jugadores/{jugador}', 'JugadorController@update');
 
-// AÑADIR PARTIDO
+// PARTIDOS
+Route::get('/partidos', 'PartidoController@getAll');
+Route::get('/partidos/{id}', 'PartidoController@show');
 Route::post('/partidos', 'PartidoController@store');
-
-// EDITAR PARTIDO
+Route::delete('/partidos/{id}', 'PartidoController@destroy');
 Route::put('/partidos/{partido}', 'PartidoController@edit');

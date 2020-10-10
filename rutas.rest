@@ -1,0 +1,33 @@
+URL= http://localhost:8000/api/jugadores
+###
+GET http://localhost:8000/api/jugadores
+
+
+###
+POST http://localhost:8000/api/jugadores
+Content-Type: application/json
+
+{
+    "nombre": "Paquito",
+    "apellido": "Navarro",
+    "telefono": 0,
+    "posicion": "Drive",
+    "nivel": 7,
+    "ranking": null,
+    "fk_usuario": null,
+    "fk_partido": null
+}
+###
+PUT http://localhost:8000/api/jugadores/1
+Content-Type: application/json
+
+{
+    "nombre": "Paquito",
+    "apellido": "Navarro",
+    "telefono": 0,
+    "posicion": "Drive",
+    "nivel": 7,
+    "ranking": null,
+    "fk_usuario": null,
+    "fk_partido": null
+}

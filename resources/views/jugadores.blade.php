@@ -2,26 +2,76 @@
 {{-- @extends('layouts.sidebar') --}}
 
 @section('content')
+<div class="row w-80">
+    <div class="col-8">
+        <h4> Lista de Jugadores</h4>
+    </div>
+
+    <div class="col-4">
+        <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Añadir nuevo partido</span></a>
+        <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Eliminar</span></a>
+    </div>
+</div>
+{{-- <div class="row">
+    <div class="col">
+        <table class="table table-dark table-striped table-hover d-inline-table">
+            <tbody>
+                <tr>
+                <th scope="col">
+                    <span class="custom-checkbox">
+                        <input type="checkbox" id="selectAll">
+                        <label for="selectAll"></label>
+                    </span>
+                </th>
+                <th class="text-center" scope="col">NOMBRE</th>
+                <th class="text-center" scope="col">APELLIDO</th>
+                <th class="text-center" scope="col">NIVEL</th>
+                <th class="text-center" scope="col">POSICION</th>
+                <th class="text-center" scope="col">RANKING</th>
+                <th class="text-center" scope="col">ACCIONES</th>
+                </tr>
+                @foreach ($jugadores as $jugador)
+
+                <tr>
+                    <th scope="row">
+                    <span class="custom-checkbox">
+                        <input type="checkbox" id="{{$jugador->id}}" name="options[]" value="{{$jugador->id}}">
+                        <label for="checkbox1"></label>
+                    </span>
+                    </th>
+                    <td class="text-center">{{$jugador->nombre}}</td>
+                    <td class="text-center">{{$jugador->apellido}}</td>
+                    <td class="text-center">{{$jugador->nivel}}</td>
+                    <td class="text-center">{{$jugador->posicion}}</td>
+                    <td class="text-center">{{$jugador->ranking}}</td>
+                    <td class="d-flex justify-content-around">
+                        <a href="#editEmployeeModal" data-toggle="modal"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                        <a href="#deleteEmployeeModal" data-toggle="modal"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+</div> --}}
 
 
 
 
 
+ {{--           <div class="row py-3 bg-secondary">
 
-
-        <div class="container">
-
-            <div class="row py-3 bg-secondary">
-                <div class="col-8 d-flex align-items-center">
+                <div class="col d-flex align-items-center">
                     <h4> Lista de Jugadores</h4>
                 </div>
 
-                <div class="col-4 d-flex justify-content-around">
+                <div class="col d-flex justify-content-around">
                     <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Añadir nuevo partido</span></a>
                     <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Eliminar</span></a>
-                </div>
-            </div>
+                </div> --}}
 
+
+{{--
             <div class="row">
                 <table class="table table-dark table-striped table-hover d-inline-table">
                     <tbody>
@@ -61,8 +111,9 @@
                         @endforeach
                     </tbody>
                 </table>
-            </div>
+            </div> --}}
         </div>
+    </div>
 <!-- Edit Modal HTML -->
 <div id="addEmployeeModal" class="modal fade">
 	<div class="modal-dialog">

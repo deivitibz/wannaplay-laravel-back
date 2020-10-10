@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Partido;
 use App\Jugador;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class PartidoController extends Controller
 {
@@ -25,6 +26,12 @@ class PartidoController extends Controller
 
     }
 
+    public function getAll(){
+        $partidos = Partido::All();
+
+        return response()->json(['data'=> $partidos]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -32,7 +39,7 @@ class PartidoController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -43,9 +50,9 @@ class PartidoController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
-        /* Partido::create($request->all());
-        return response()->json(["message" => "Partido Creado"]); */
+        /* return $request; */
+        Partido::create($request->all());
+        return response()->json(["message" => "Partido Creado"]);
     }
 
     /**
@@ -67,7 +74,7 @@ class PartidoController extends Controller
      */
     public function edit(Partido $partido)
     {
-        //
+        return response()->json($partido);
     }
 
     /**
@@ -79,7 +86,8 @@ class PartidoController extends Controller
      */
     public function update(Request $request, Partido $partido)
     {
-        return $request . ' ' . $partido;
+        //return $request . ' ' . $partido;
+        return response()->json($request);
     }
 
     /**
@@ -88,8 +96,25 @@ class PartidoController extends Controller
      * @param  \App\Partido  $partido
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Partido $partido)
+    public function destroy(Partido $partido, $id,Response $response)
     {
-        //
+        //$findPartido = Partido::where('id', $id)->first();
+        $findPartido = Partido::find($id);
+        if($findPartido){
+            $findPartido->delete();
+            $data = [ 'message' => 'sucesss'];
+        } else {
+            $data = [ 'message' => 'error'];
+        }
+        /* $partido = Partido::find($id)->delete();
+        if($partido){
+            $data = [
+
+            ]
+        } */
+        //return $partidoDelete;
+        //$partido->delete();
+        return $data;
+        //return response()->json(['message'=> 'partido deleted']);
     }
 }

@@ -13,20 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     if(!session()->has('data')){
         return redirect('/login');
     } else {
         return view('home');
     }
-});
+}); */
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/partidos', 'PartidoController@index')->name('partidos');
+Route::get('/jugadores','JugadorController@index')->name('jugadores');
+Route::get('/admin',function(){
+    return view('admin');
+})->name('jugadores');
 
-Route::get('/partidos', 'PartidoController@index');
+/* Route::get('/partidos', 'PartidoController@index')->middleware('auth');
 
-Route::get('/jugadores', 'JugadorController@index');
+Route::get('/jugadores', 'JugadorController@index')->middleware('auth'); */
 
-Route::post('partidos', 'PartidoController@update')->name('partidos');
+//Route::post('partidos', 'PartidoController@update')->name('partidos');
+

@@ -1,17 +1,11 @@
-@extends('layouts.app')
 
-@section('content')
-
-
-  <!-- Bootstrap row -->
-  <div class="row" id="body-row">
-      <!-- Sidebar -->
+@if(! Request::is('login') && ! Request::is('register'))
       <div id="sidebar-container" class="sidebar-expanded d-none d-md-block"><!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
           <!-- Bootstrap List Group -->
           <ul class="list-group">
               <!-- Separator with title -->
               <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
-                  <small>MAIN MENU</small>
+                  <small>MAIN MENU_</small>
               </li>
               <!-- /END Separator -->
               <!-- Menu with submenu -->
@@ -94,7 +88,4 @@
               </li>
           </ul><!-- List Group END-->
       </div><!-- sidebar-container END -->
-
-
-  </div><!-- body-row END -->
-@endsection
+@endif
