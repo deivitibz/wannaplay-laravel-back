@@ -21,21 +21,6 @@ use Illuminate\Support\Facades\Route;
     }
 }); */
 
-Auth::routes();
-
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/partidos', 'PartidoController@index')->name('partidos');
-Route::get('/jugadores','JugadorController@index')->name('jugadores');
-Route::get('/admin',function(){
-    return view('admin');
-})->name('jugadores');
-
-
-Route::get('users/{id}', function ($id) {
-
-});
-
 /* Route::get('/partidos', 'PartidoController@index')->middleware('auth');
 
 Route::get('/jugadores', 'JugadorController@index')->middleware('auth'); */
