@@ -36,6 +36,9 @@ Route::get('users/{id}', function ($id) {
 
 });
 
+asdf
+asdf
+
 /* Route::get('/partidos', 'PartidoController@index')->middleware('auth');
 
 Route::get('/jugadores', 'JugadorController@index')->middleware('auth'); */
