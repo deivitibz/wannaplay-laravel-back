@@ -31,6 +31,11 @@ Route::get('/admin',function(){
     return view('admin');
 })->name('jugadores');
 
+
+Route::get('users/{id}', function ($id) {
+
+});
+
 /* Route::get('/partidos', 'PartidoController@index')->middleware('auth');
 
 Route::get('/jugadores', 'JugadorController@index')->middleware('auth'); */
