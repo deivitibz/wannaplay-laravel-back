@@ -1,10 +1,11 @@
-URL= http://localhost:8000/api/jugadores
-###
-GET http://localhost:8000/api/jugadores
-
+@url_jugadores= http://localhost:8080/api/jugadores
+@url_partidos= http://localhost:8080/api/partidos
 
 ###
-POST http://localhost:8000/api/jugadores
+GET {{url_jugadores}}
+
+###
+POST {{url_jugadores}}
 Content-Type: application/json
 
 {
@@ -13,12 +14,12 @@ Content-Type: application/json
     "telefono": 0,
     "posicion": "Drive",
     "nivel": 7,
-    "ranking": null,
-    "fk_usuario": null,
-    "fk_partido": null
+    "ranking": 0,
+    "fk_usuario": 1,
+    "fk_partido": 1
 }
 ###
-PUT http://localhost:8000/api/jugadores/1
+PUT {{url_jugadores}}/1
 Content-Type: application/json
 
 {
